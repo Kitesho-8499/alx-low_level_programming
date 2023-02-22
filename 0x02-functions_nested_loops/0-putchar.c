@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <main.h>
 /**
- * main -print_putcchar
- * is written by kibee
+ * main - main fuction
+ * print using putchar
  * Return: Always 0
  */
 int main(void)
