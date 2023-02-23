@@ -5,7 +5,7 @@
 #include <stdio.h>
 
 /**
- * main - List all the natural numbers bellonw 1024 (excluded) that are multible of 3 and 5
+ * main - List all the natural numbers bellonw that are multible of 3 and 5
  *
  * Return: Always 0.
  */
