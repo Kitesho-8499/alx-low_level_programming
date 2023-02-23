@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <main.h>
 /**
  * main - main fuction
  * _putchar: print the aphabets putchar
