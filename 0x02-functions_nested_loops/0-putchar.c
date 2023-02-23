@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <main.h>
 /**
  * main - main fuction
- * print using putchar
+ * _putchar: print the aphabets putchar
  * Return: Always 0
  */
 int main(void)
@@ -14,6 +15,6 @@ int main(void)
 	_putchar('h');
 	_putchar('a');
 	_putchar('r');
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
