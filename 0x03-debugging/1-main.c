@@ -1,4 +1,4 @@
-#include <stdio>
+#include "main"
 
 /**
  * main - causes an infinite loop
