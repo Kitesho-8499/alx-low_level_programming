@@ -3,12 +3,11 @@
  * _puts - Print a string followed by a new line to stdoutf
  * @str: string to print
  */
-void _puts(char *)
+void _puts(char *str)
 {
 	while (*str != '\0')
 	{
-		_puts(char  str);
-		str++;
+		_putchar(*str++);
 	}
-	_puts('\n');
+	_putchar('\n');
 }
