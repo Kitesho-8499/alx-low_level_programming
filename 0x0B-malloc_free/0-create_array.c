@@ -8,20 +8,17 @@
  * Description: create array of size size and assign char c
  * Return: pointer to array, NULL if fail
  */
-char *create_array(unsigned int size, char c);
+char *create_array(unsigned int size, char c)
 {
-	char *s;
-        unsigned int i;
+	unsigned int j;
+	char *str;
 
-        if (size <= 0)
-                return (0);
-
-        s = malloc(sizeof(char) * size);
-        if (s == 0)
-                return (0);
-
-        for (i = 0; i < size; i++)
-                *(s + i) = c;
-        *(s + i) = '\n';
-	return (0);
+	str = malloc(sizeof(char) * size);
+	if (size == 0 || str == NULL)
+		return (NULL);
+	for (j = 0; j < size; j++)
+		str[j] = c;
+	return (str);
 }
+
+
