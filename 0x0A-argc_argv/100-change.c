@@ -1,70 +1,45 @@
 #include <stdio.h>
-#include "main.h"
 #include <stdlib.h>
-/**
- * main - Program that prints the minimum number of coins
- * To make change for an amount of money
- * @argc: Counts the number of parameters
- * @argv: array of pointers containing strings entering main
- * Return: Always 0 (Success)
- */
-int main(int argc, char **argv)
-{
-	int r, pf, coins, cents, y;
-	int m[5] = {25, 10, 5, 2, 1};
+#include "main.h"
 
-	pf = 1, r = 0, coins = 0;
-	if (argc == 2)
-	{
-		if (_isnumber(argv[1]))
-		{
-			pf = 0, cents = atoi(argv[1]);
-			if (cents >= 0)
-			{
-				while (cents != 0)
-				{
-					y = cents / m[r];
-					if (y == 0)
-					{
-						r++;
-					}
-					else
-					{
-						coins += y;
-						cents -= (y * m[r]);
-					}
-				}
-			}
-		}
-	}
-	if (pf == 0)
-		printf("%i\n", coins);
-	else
-		printf("%s\n", "Error");
-	return (pf);
-}
 /**
- * _isnumber - if string is a number
- * @s: string
+ * main - prints the minimum number of coins to
+ * make change for an amount of money
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
- * Return: On success 1.
- * If not a number, 0 is returned.
+ * Return: 0 (Success), 1 (Error)
  */
-int _isnumber(char *s)
+int main(int argc, char *argv[])
 {
-	int w, smart, y;
+	int num, j, result;
+	int coins[] = {25, 10, 5, 2, 1};
 
-	w = 0, y = 0, smart = 1;
-	if (*s == '-')
-		w++;
-	for (; *(s + w) != 0; w++)
+	if (argc != 2)
 	{
-		y = isdigit(*(s + w));
-		if (y == 0)
+		printf("Error\n");
+		return (1);
+	}
+
+	num = atoi(argv[1]);
+	result = 0;
+
+	if (num < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
+
+	for (j = 0; j < 5 && num >= 0; j++)
+	{
+		while (num >= coins[j])
 		{
-			smart = 0;
-			break;
+			result++;
+			num -= coins[j];
 		}
 	}
-	return (smart);
+
+	printf("%d\n", result);
+	return (0);
 }
+
